@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>ptkdiscount</name>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <stability>stable</stability>
     <license uri="http://www.ptk.com.co">commercial</license>
     <channel>community</channel>
@@ -23,11 +23,11 @@ Members &#x201C;VIP&#x201D; group: we will give a discount of &#xD;
 - 30% from 16th February to 10th March, &#xD;
 - 50% from 11th March to 20th March.&#xD;
 &#x201C;General&#x201D; group would receive a discount of 10% from 1st January to 10th February 2016.</description>
-    <notes>Solution to bug the administrator, integrates the ACL</notes>
+    <notes>Update dependencies</notes>
     <authors><author><name>PtkDeveloper</name><user>MAG002965829</user><email>caguilar@ptk.com.co</email></author></authors>
-    <date>2016-03-09</date>
-    <time>14:51:38</time>
+    <date>2016-03-10</date>
+    <time>13:41:32</time>
     <contents><target name="magecommunity"><dir name="PTK"><dir name="Discount"><dir name="Block"><dir name="Adminhtml"><dir name="Discount"><dir name="Edit"><file name="Form.php" hash="c4baf52fac8668929dd7b7298766779b"/><dir name="Tab"><file name="Form.php" hash="6d4de01e920f0ccec2c415c8017f37bc"/></dir><file name="Tabs.php" hash="7a85daf47d0ec2db0c88472e8b00abbb"/></dir><file name="Edit.php" hash="d266a254b4189cbe6d64095904f0c25d"/><file name="Grid.php" hash="b05554ea23734fa9ae5060fcaefb271a"/></dir><file name="Discount.php" hash="1b0effb2d1aa7afe12929609e5014e0e"/><file name="Discountbackend.php" hash="91fffa4f942cb1bd6107fde8467175bd"/></dir></dir><dir name="Helper"><file name="Data.php" hash="982540fcf600d0dd90533b6e0c834641"/></dir><dir name="Model"><dir name="Catalog"><file name="Product.php" hash="90b837bd43565095d4b78d22f8c38bf3"/></dir><file name="Cron.php" hash="4dd23ef17da8faae38d75adb6437e9e3"/><file name="Discount.php" hash="b5492952d99a36743729413af2f40eed"/><dir name="Mysql4"><dir name="Discount"><file name="Collection.php" hash="b3aad55070df0aa361269e7d853ce5ab"/></dir><file name="Discount.php" hash="b718f05969955072a3b3e93a632a682b"/></dir><file name="Observer.php" hash="bd8e7eca7f852cee67eec603d6395c8a"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="DiscountController.php" hash="ca49eeea5ebf931299309b2b0738a858"/><file name="DiscountbackendController.php" hash="c72b4608d8fa7d9c8e4318de2d13c940"/></dir></dir><dir name="etc"><file name="config.xml" hash="d33fd420292349ab10ddd585c100948e"/><file name="system.xml" hash="ccde483303b3c0c10ff8fe204eaebcfe"/></dir><dir name="sql"><dir name="discount_setup"><file name="mysql4-install-0.1.0.php" hash="ebdf91cba1ded22c482727ef35ff69ee"/></dir></dir></dir></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="discount"><file name="discount.css" hash="15e0b14cab38eaafe6c5bb69f0e3e85f"/></dir></dir></dir></dir></target><target name="mage"><dir name="js"><dir name="discount"><file name="jquery-1.8.3.min.js" hash="56bbd985660f218e7769084ce8434e07"/><file name="ptkFunction.js" hash="999721c44e355646ade0674e9ba192cc"/></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="discount"><file name="discountbackend.phtml" hash="7e65f9db1e1fca46490aa6bcfc1b4144"/></dir></dir><dir name="layout"><file name="discount.xml" hash="aae400cb407965a9c880199f24bd25fe"/></dir></dir></dir></dir></target><target name="magelocale"><dir name="es_ES"><file name="PTK_Discount.csv" hash="7149341d0cacd4d29b55c6244eda40c1"/></dir></target><target name="magemedia"><dir name="media"><dir name="example"><file name="imports" hash=""/></dir></dir></target><target name="mageetc"><dir name="modules"><file name="PTK_Discount.xml" hash="561a01ac6d19058f3473c2f004aceb7b"/></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.3.0</min><max>5.6.0</max></php></required></dependencies>
+    <dependencies><required><php><min>5.3.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
