@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+	<discount_adminhtml_discount_new>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>discount/jquery-1.8.3.min.js</name></action>
+			<action method="addItem"><type>js</type><name>discount/ptkFunction.js</name></action>
+			<action method="addItem"><type>skin_css</type><name>discount/discount.css</name></action>
+		</reference>
+
+	</discount_adminhtml_discount_new>
+
+	<discount_adminhtml_discount_edit>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>discount/jquery-1.8.3.min.js</name></action>
+			<action method="addItem"><type>js</type><name>discount/ptkFunction.js</name></action>
+			<action method="addItem"><type>skin_css</type><name>discount/discount.css</name></action>
+		</reference>
+
+	</discount_adminhtml_discount_edit>
+
+  <discount_adminhtml_discountbackend_index>
+	<reference name="content">
+	  <block type="discount/adminhtml_discountbackend" name="discountbackend" template="discount/discountbackend.phtml"/>
+	</reference>
+  </discount_adminhtml_discountbackend_index>
+  <discount_adminhtml_discount_index>
+	<reference name="content">
+	  <block type="discount/adminhtml_discount" name="discount" />
+	</reference>
+  </discount_adminhtml_discount_index>
+</layout>

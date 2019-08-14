@@ -82,7 +82,7 @@
   <adminhtml>
 	<menu>
 	  <discount module="discount">
-		<title>Discounts</title>
+		<title>Discount Manager</title>
 		<sort_order>100</sort_order>
 		<children>
 		  <discountbackend module="discount">
@@ -91,7 +91,7 @@
 			<action>admin_discount/adminhtml_discountbackend</action>
 		  </discountbackend>
 		  <discount module="discount">
-		    <title>Manage Discount</title>
+		    <title>Discounts</title>
 			<sort_order>0</sort_order>
 			<action>admin_discount/adminhtml_discount</action>
 		  </discount>
@@ -106,14 +106,14 @@
 		<admin>
 		  <children>
 			<discount translate="title" module="discount">
-			  <title>Discounts</title>
+			  <title>Discount Manager</title>
 			  <sort_order>1000</sort_order>
 			  <children>
 		  <discountbackend translate="title">
 			<title>Import</title>
 		  </discountbackend>
 		  <discount translate="title">
-			<title>Manage Discount</title>
+			<title>Discounts</title>
 			<sort_order>0</sort_order>
 		  </discount>
 			  </children>

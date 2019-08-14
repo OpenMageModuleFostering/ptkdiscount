@@ -301,4 +301,10 @@ class PTK_Discount_Adminhtml_DiscountController extends Mage_Adminhtml_Controlle
 
     }
 
+
+
+    protected function _isAllowed(){
+        return Mage::getSingleton('admin/session')->isAllowed('discount/discount');
+    }
+
 }

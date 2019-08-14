@@ -7,4 +7,10 @@ class PTK_Discount_Adminhtml_DiscountbackendController extends Mage_Adminhtml_Co
 	   $this->_title($this->__("Import"));
 	   $this->renderLayout();
     }
+
+	protected function _isAllowed(){
+		return Mage::getSingleton('admin/session')->isAllowed('discount/discountbackend');
+	}
+
+
 }
