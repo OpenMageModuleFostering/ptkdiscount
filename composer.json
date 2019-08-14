@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/ptkdiscount",
+    "type": "magento-module",
+    "license": "commercial",
+    "homepage": "",
+    "description": "The aim of the module is to offer the possibility for store managers to create discounts",
+    "authors": [
+    {
+        "name": "PtkDeveloper",
+        "email": "caguilar@ptk.com.co"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

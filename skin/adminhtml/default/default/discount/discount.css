@@ -1,0 +1,25 @@
+.contenedor-producto{
+    width: 350px;
+    border: 1px solid #c3c3c3;
+    position: relative;
+    top: -200px;
+    float: right;
+    padding: 10px;
+}
+
+.contenedor-producto img{
+    margin: auto;
+
+}
+
+.contenedor-producto h2{
+    text-decoration: line-through;
+    color: #3b3b3b;
+    font-size: 12px;
+}
+
+.contenedor-producto .descuento{
+    color:#000000;
+    text-decoration: none;
+    font-size: 16px;
+}

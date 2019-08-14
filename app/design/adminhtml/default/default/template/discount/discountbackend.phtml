@@ -1,0 +1,57 @@
+<div class="content-header">
+    <div id="order-header">
+        <div>
+            <table>
+                <tbody>
+                <tr>
+                    <td style="width: 50%">
+                        <h3 class="icon-head head-sales-order">
+                            <?php echo Mage::helper("adminhtml")->__("Import Discount")?>
+                        </h3>
+                    </td>
+                    <td style="width: 50%;text-align: right">
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<form id="edit_form" action="<?=Mage::helper("adminhtml")->getUrl('*/adminhtml_discount/syncup')?>"  method="post" enctype="multipart/form-data" >
+    <input type="hidden" name="form_key" id="form_key" value="<? echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+
+    <div class="entry-edit box-left">
+        <div class="entry-edit-head"><h4 class="icon-head "><?php echo Mage::helper("discount")->__("sync up")?></h4></div>
+        <fieldset>
+            <table class="table">
+                <tr>
+                    <td style="width: 35%;"><strong><?php echo Mage::helper("discount")->__("Attach Template")?> (CSV): <span>*</span></strong></td>
+                    <td ><input type="file" required="true" name="file" class="required-entry input-text " accept=".csv"></td>
+                </tr>
+                <tr>
+                    <td style="width: 30%;"><strong><?php echo Mage::helper("discount")->__("Delete Records")?>: <span>*</span></strong></td>
+                    <td ><input name="empty" type="checkbox" value="1"></td>
+                </tr>
+                <tr>
+                    <td><?php echo Mage::helper("discount")->__("File Example")?></td>
+                    <td><a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);?>media/example/exampleDiscount.csv" target="_blank"><?php echo Mage::helper("adminhtml")->__("Download")?></a>  </td>
+                </tr>
+
+                <tr>
+                    <td><?php echo Mage::helper("discount")->__("Note:")?></td>
+                    <td><?php echo Mage::helper("discount")->__("To apply the rule to all customer groups enter the value -1")?></a>  </td>
+                </tr>
+
+            </table>
+        </fieldset>
+    </div>
+
+    <div class="entry-edit" style="text-align: right">
+        <p>
+            <button  title="Cotizar" type="submit" class="scalable save" ><span><span><?php echo Mage::helper("adminhtml")->__("sync up")?></span></span></button>
+        </p>
+    </div>
+</form>
+

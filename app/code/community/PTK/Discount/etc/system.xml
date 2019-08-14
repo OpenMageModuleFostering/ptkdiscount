@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<ptk_discount translate="label" module="discount">
+            <label>Discount</label>
+            <sort_order>0</sort_order>
+        </ptk_discount>
+	  </tabs>
+</config>

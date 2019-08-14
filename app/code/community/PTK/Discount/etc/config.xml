@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <PTK_Discount>
+      <version>0.1.0</version>
+    </PTK_Discount>
+  </modules>
+  <global>
+    <helpers>
+      <discount>
+        <class>PTK_Discount_Helper</class>
+      </discount>
+    </helpers>
+	<blocks>
+	  <discount>
+		<class>PTK_Discount_Block</class>
+	  </discount>
+	</blocks>
+	<models>
+	  <discount>
+		<class>PTK_Discount_Model</class>
+		<resourceModel>discount_mysql4</resourceModel>
+	  </discount>
+	  <discount_mysql4>
+		<class>PTK_Discount_Model_Mysql4</class>
+		<entities>		  
+			  <discount>
+				<table>ptk_discount</table>
+			  </discount>
+        </entities>
+	  </discount_mysql4>
+		<catalog>
+			<rewrite>
+				<product>PTK_Discount_Model_Catalog_Product</product>
+			</rewrite>
+		</catalog>
+	</models>
+	<resources>
+	  <discount_setup>
+		<setup>
+		  <module>PTK_Discount</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </discount_setup>
+	  <discount_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </discount_write>
+	  <discount_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </discount_read>
+	</resources>
+    <events>
+	  <catalog_product_prepare_save> <!-- identifier of the event we want to catch -->
+        <observers>
+          <catalog_product_prepare_save_handler> <!-- identifier of the event handler -->
+            <type>model</type> <!-- class method call type; valid are model, object and singleton -->
+            <class>discount/observer</class> <!-- observers class alias -->
+            <method>updateAllPrice</method>  <!-- observer's method to be called -->
+            <args></args> <!-- additional arguments passed to observer -->
+          </catalog_product_prepare_save_handler>
+        </observers>
+      </catalog_product_prepare_save>
+    </events>
+  </global>
+  <admin>
+	<routers>
+	  <discount>
+	    <use>admin</use>
+		<args>
+		  <module>PTK_Discount</module>
+		  <frontName>admin_discount</frontName>
+		</args>
+	  </discount>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <discount module="discount">
+		<title>Discounts</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <discountbackend module="discount">
+			<title>Import</title>
+			<sort_order>0</sort_order>
+			<action>admin_discount/adminhtml_discountbackend</action>
+		  </discountbackend>
+		  <discount module="discount">
+		    <title>Manage Discount</title>
+			<sort_order>0</sort_order>
+			<action>admin_discount/adminhtml_discount</action>
+		  </discount>
+		</children>
+	  </discount>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<discount translate="title" module="discount">
+			  <title>Discounts</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <discountbackend translate="title">
+			<title>Import</title>
+		  </discountbackend>
+		  <discount translate="title">
+			<title>Manage Discount</title>
+			<sort_order>0</sort_order>
+		  </discount>
+			  </children>
+			</discount>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<discount>
+		  <file>discount.xml</file>
+		</discount>
+	  </updates>
+	</layout>
+  </adminhtml>    
+    <crontab>
+        <jobs>            
+			<discount_updateprice>
+                <schedule><cron_expr>*/5 * * * *</cron_expr></schedule>
+                <run><model>discount/cron::updatePrice</model></run>
+            </discount_updateprice>
+        </jobs>
+    </crontab>
+</config> 
